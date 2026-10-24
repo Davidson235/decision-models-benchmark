@@ -17,7 +17,7 @@ All local models were evaluated directly on consumer-grade hardware under an exp
 | **GPU** | **NVIDIA GeForce RTX 2060 SUPER** (8,192 MiB GDDR6, Driver 581.80, CUDA 12.4) |
 | **CPU** | **Intel Core i5-14600KF** (14 cores: 6P + 8E, 20 threads, up to 5.3 GHz) |
 | **RAM** | **48 GB** (System RAM) |
-| **OS** | **Windows 11 x64** |
+| **OS** | **Windows 10 x64** |
 | **Local Runtime** | `llama.cpp` (CUDA 12 build, `llama-server.exe` with `-ngl 99` full GPU layer offload) |
 | **Budget Ceiling** | **Strict ≤ 8 GB VRAM** (Quantized Q4_K_M / Q8_0; no system RAM paging) |
 
