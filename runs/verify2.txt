@@ -1,0 +1,29 @@
+
+== 1. metrics + normalizer unit tests
+      tests/test_metrics.py: ok ['all metric tests passed']
+      tests/test_normalizer.py: ok ['all normalizer tests passed']
+PASS  1. metrics + normalizer unit tests
+
+== 2. contract replay (3 shapes + malformed)
+PASS  2. contract replay (3 shapes + malformed)
+
+== 3. live smoke (3 tasks, real key)
+      CH-001: answers=1 sums_ok=True cost=0 out_tok=1 latency=547.0ms
+      CH-002: answers=1 sums_ok=True cost=0 out_tok=1 latency=500.0ms
+      CH-003: answers=1 sums_ok=True cost=0 out_tok=1 latency=547.0ms
+PASS  3. live smoke (3 tasks, real key)
+
+== 4a. determinism (5 tasks x 2)
+      max |delta p| over 5 tasks x 2 runs = 0.000e+00
+PASS  4a. determinism (5 tasks x 2)
+
+== 4b. resume without duplicates
+      first=2 after_resume=4 unique=4
+PASS  4b. resume without duplicates
+
+== 5. full-run audit + deterministic summary
+      run=run-20261023-230946 raw_rows=552 unique_pairs=535 expected=535 failures=0 scored=535 summary_deterministic=True
+PASS  5. full-run audit + deterministic summary
+
+============================================================
+6/6 checks passed

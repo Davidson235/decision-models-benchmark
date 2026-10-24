@@ -1,0 +1,32 @@
+{
+  "model": "vllm-d3-lite",
+  "endpoint": "http://127.0.0.1:9950/v1/systemone",
+  "n": 107,
+  "errors": 0,
+  "accuracy": 0.6542056074766355,
+  "accuracy_ci": [
+    0.56015355580043,
+    0.7375685990583956
+  ],
+  "brier": 0.3910770300896479,
+  "ece": 0.10514295462643271,
+  "latency": {
+    "n": 107,
+    "mean": 45.5607476635514,
+    "p50": 47.0,
+    "p95": 63.0
+  },
+  "by_family": {
+    "abstention": 0.889,
+    "adversarial": 0.75,
+    "choice_fact": 0.667,
+    "choice_multiconstraint": 0.375,
+    "choice_near_miss": 0.583,
+    "choice_shortcut_trap": 0.75,
+    "multilingual": 0.929,
+    "noul_false": 0.875,
+    "noul_true": 0.5,
+    "score": 0.4
+  },
+  "wall_seconds": 4.9
+}

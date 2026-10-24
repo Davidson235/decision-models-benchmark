@@ -1,0 +1,10 @@
+{
+  "run": "resume-c381n22p",
+  "started_at": "2026-10-23T23:20:15+0300",
+  "models": [
+    "baseten/elephant-1:free"
+  ],
+  "tasks": 4,
+  "repeats": 1,
+  "no_cache": false
+}

@@ -1,0 +1,25 @@
+{
+  "model": "cpu-load",
+  "endpoint": "http://127.0.0.1:9941/v1/systemone",
+  "n": 30,
+  "errors": 0,
+  "accuracy": 0.8333333333333334,
+  "accuracy_ci": [
+    0.6643529481431982,
+    0.9266356575964831
+  ],
+  "brier": 0.254181603125644,
+  "ece": 0.18223192728534032,
+  "latency": {
+    "n": 30,
+    "mean": 2591.133333333333,
+    "p50": 1375.0,
+    "p95": 11234.0
+  },
+  "by_family": {
+    "choice_fact": 0.833,
+    "choice_multiconstraint": 0.667,
+    "choice_near_miss": 0.917
+  },
+  "wall_seconds": 77.7
+}

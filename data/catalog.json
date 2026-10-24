@@ -1,0 +1,322 @@
+[
+ {
+  "slug": "baseten/elephant-1:free",
+  "name": "Baseten: Elephant 1 (free)",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 0.0,
+  "price_out": 0.0,
+  "ctx": 16384
+ },
+ {
+  "slug": "baseten/mammoth-1:free",
+  "name": "Baseten: Mammoth 1 (free)",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 0.0,
+  "price_out": 0.0,
+  "ctx": 16384
+ },
+ {
+  "slug": "cloudflare/clef",
+  "name": "Cloudflare: Clef",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 2.4e-07,
+  "price_out": 0.0,
+  "ctx": 65537
+ },
+ {
+  "slug": "cloudflare/clef-flash",
+  "name": "Cloudflare: Clef Flash",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 3.8e-08,
+  "price_out": 0.0,
+  "ctx": 24576
+ },
+ {
+  "slug": "cloudflare/clef-omni",
+  "name": "Cloudflare: Clef Omni",
+  "modalities": [
+   "text",
+   "image",
+   "audio",
+   "video"
+  ],
+  "price_in": 1.5e-07,
+  "price_out": 0.0,
+  "ctx": 65536
+ },
+ {
+  "slug": "inception/mercury-decide",
+  "name": "Inception: Mercury Decide",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 2e-08,
+  "price_out": 0.0,
+  "ctx": 65536
+ },
+ {
+  "slug": "inception/mercury-decide:free",
+  "name": "Inception: Mercury Decide (free)",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 0.0,
+  "price_out": 0.0,
+  "ctx": 65536
+ },
+ {
+  "slug": "jaredpalmer/kev-4b",
+  "name": "Jared Palmer: Kev 4B",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 8192
+ },
+ {
+  "slug": "liquid/d1",
+  "name": "LiquidAI: d1",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 2e-08,
+  "price_out": 0.0,
+  "ctx": 65536
+ },
+ {
+  "slug": "liquid/d1-ultra",
+  "name": "LiquidAI: d1-ultra",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 32768
+ },
+ {
+  "slug": "microsoft/microsoft-decision-1",
+  "name": "Microsoft: Microsoft-Decision-1",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 32768
+ },
+ {
+  "slug": "nace-ai/drex-max",
+  "name": "Nace.AI: Drex Max",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 6e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "nace-ai/drex-v1.5",
+  "name": "Nace.AI: Drex v1.5",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 4e-08,
+  "price_out": 0.0,
+  "ctx": 131072
+ },
+ {
+  "slug": "nace-ai/drex-v2.0",
+  "name": "Nace.AI: Drex v2.0",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 6e-08,
+  "price_out": 0.0,
+  "ctx": 131072
+ },
+ {
+  "slug": "openai/gpt-6-luna-decisions",
+  "name": "OpenAI: GPT-6 Luna Decisions",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 1e-07,
+  "price_out": 0.0,
+  "ctx": 1050000
+ },
+ {
+  "slug": "perplexity/pplx-decider-flash-v1.2",
+  "name": "Perplexity: Decider Flash V1.2",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 1e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "perplexity/pplx-decider-v1.2",
+  "name": "Perplexity: Decider V1.2",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 2e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "respan/span-01",
+  "name": "Respan: Span-01",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 2e-08,
+  "price_out": 0.0,
+  "ctx": 0
+ },
+ {
+  "slug": "respan/span-01-lite",
+  "name": "Respan: Span-01 Lite",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 0.0,
+  "price_out": 0.0,
+  "ctx": 0
+ },
+ {
+  "slug": "respan/span-01-lite:free",
+  "name": "Respan: Span-01 Lite (free)",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 0.0,
+  "price_out": 0.0,
+  "ctx": 0
+ },
+ {
+  "slug": "respan/span-02",
+  "name": "Respan: Span-02",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 1e-08,
+  "price_out": 0.0,
+  "ctx": 131072
+ },
+ {
+  "slug": "scaledown/classify-1",
+  "name": "ScaleDown: Classify-1",
+  "modalities": [
+   "text",
+   "image",
+   "file"
+  ],
+  "price_in": 4e-08,
+  "price_out": 0.0,
+  "ctx": 1000000
+ },
+ {
+  "slug": "togethercomputer/tev1-4b-experimental",
+  "name": "Together: Tev1 4B Experimental",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 32768
+ },
+ {
+  "slug": "typesafe/jev-1.13",
+  "name": "TypeSafe: Jev 1.13",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "typesafe/jev-1.14",
+  "name": "TypeSafe: Jev 1.14",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "upstage/solar-decide",
+  "name": "Upstage: Solar Decide",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 5e-08,
+  "price_out": 0.0,
+  "ctx": 524288
+ },
+ {
+  "slug": "upstage/solar-decide-flash",
+  "name": "Upstage: Solar Decide Flash",
+  "modalities": [
+   "text"
+  ],
+  "price_in": 5e-08,
+  "price_out": 0.0,
+  "ctx": 524288
+ },
+ {
+  "slug": "~perplexity/pplx-decider-flash-latest",
+  "name": "Perplexity: Decider Flash Latest",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 1e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "~perplexity/pplx-decider-latest",
+  "name": "Perplexity: Decider Latest",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 2e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ },
+ {
+  "slug": "~typesafe/jev-latest",
+  "name": "TypeSafe: Jev Latest",
+  "modalities": [
+   "text",
+   "image"
+  ],
+  "price_in": 4.2e-08,
+  "price_out": 0.0,
+  "ctx": 262144
+ }
+]

@@ -1,0 +1,33 @@
+{
+  "model": "laya-multilingual",
+  "checkpoint": ".tools/laya-multilingual",
+  "n": 107,
+  "errors": 0,
+  "accuracy": 0.38317757009345793,
+  "accuracy_ci": [
+    0.29662839013259595,
+    0.4778245228531422
+  ],
+  "brier": 0.8655344882242991,
+  "ece": 0.28162990654205605,
+  "latency": {
+    "n": 107,
+    "mean": 94.6355140186916,
+    "p50": 78.0,
+    "p95": 186.8
+  },
+  "by_family": {
+    "abstention": 0.333,
+    "adversarial": 0.5,
+    "choice_fact": 0.333,
+    "choice_multiconstraint": 0.375,
+    "choice_near_miss": 0.417,
+    "choice_shortcut_trap": 0.25,
+    "multilingual": 0.571,
+    "noul_false": 0.625,
+    "noul_true": 0.5,
+    "score": 0.15
+  },
+  "load_seconds": 5.2,
+  "wall_seconds": 10.1
+}

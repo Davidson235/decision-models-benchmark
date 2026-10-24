@@ -1,0 +1,154 @@
+[
+  {
+    "id": "C-01",
+    "quote": "System One модели не генерируют текст, а за один проход возвращают распределение вероятностей по закрытому списку вариантов",
+    "topic": "онтология",
+    "status": "подтверждено",
+    "evidence": "Контракт POST /api/v1/systemone проверен 655 живыми вызовами: ответ содержит answers[].probabilities, поля type/choice/score/noul. Текстовой генерации в ответе нет.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-02",
+    "quote": "провайдеры тарифицируют только входные токены (выход стоит $0.00)",
+    "topic": "биллинг",
+    "status": "частично",
+    "evidence": "Цена выхода $0/M подтверждена каталогом для всех 30 decision-моделей. Но формулировка «нулевые токены» неверна: usage.output_tokens = 1–55 в 535 ответах, у jev среднее 41.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-03",
+    "quote": "на OpenRouter 4 бесплатные decision-модели",
+    "topic": "каталог",
+    "status": "подтверждено",
+    "evidence": "GET /models?output_modalities=decisions: mammoth-1:free, elephant-1:free, mercury-decide:free, span-01-lite:free.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-04",
+    "quote": "Laya открыта, ставится через pip install laya, ModernBERT-large 421M и mmBERT-base 322M",
+    "topic": "существование модели",
+    "status": "непроверяемо",
+    "evidence": "В каталоге OpenRouter модели Laya нет ни среди 30 decision-моделей, ни в общем списке 469 моделей. Локальный запуск не проверялся.",
+    "comparability": "none"
+  },
+  {
+    "id": "C-05",
+    "quote": "mammoth-1 — #1 из 208 моделей на Jev Decision Index 0.4 (71.24), elephant-1 — 62.6",
+    "topic": "рейтинг",
+    "status": "непроверяемо",
+    "evidence": "Баллы стороннего лидерборда. Наш корпус даёт другую шкалу (доля верных ответов), сравнивать 71.24 с 0.972 нельзя.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-06",
+    "quote": "AA Decision Index: mammoth-1 65.9, elephant-1 65.2, d1-ultra 65.0",
+    "topic": "рейтинг",
+    "status": "непроверяемо",
+    "evidence": "Сторонний индекс, нет доступа к его протоколу. Наши измерения на другом корпусе.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-07",
+    "quote": "d1-ultra: 85% анти-галлюцинаций, 76.7 на Liquid Eval",
+    "topic": "рейтинг",
+    "status": "непроверяемо",
+    "evidence": "Нет доступа ни к Liquid Eval, ни к AA-Omniscience. Мы тестировали d1 только на тексте и на 20 картинках.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-08",
+    "quote": "Darwin-27B-ZTC-v5 — #1 на S1MB с Borda 91.16",
+    "topic": "существование модели",
+    "status": "непроверяемо",
+    "evidence": "Модели Darwin нет в каталоге OpenRouter (30 decision-моделей). Проверить нечего.",
+    "comparability": "none"
+  },
+  {
+    "id": "C-09",
+    "quote": "pplx-decider-v1.1 — Borda 88.66, Decision Index 0.3 — 62.2",
+    "topic": "несопоставимость",
+    "status": "несопоставимо",
+    "evidence": "В каталоге есть pplx-decider-v1.2 и pplx-decider-flash-v1.2, но не v1.1. Наш результат 0.832 относится к flash-v1.2 — это другая модель, сравнение недействительно.",
+    "comparability": "family"
+  },
+  {
+    "id": "C-10",
+    "quote": "Span-02 — 64.1 на Decision Index 0.3 с budget_ms и 61.2 без лимита",
+    "topic": "рейтинг",
+    "status": "непроверяемо",
+    "evidence": "Параметр budget_ms в нашей схеме запроса отсутствует, воспроизвести условия нечем.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-11",
+    "quote": "Jev стоит $0.042 за 1M входных токенов",
+    "topic": "цена",
+    "status": "подтверждено",
+    "evidence": "Каталог: typesafe/jev-1.14 — prompt 0.000000042. Наш прогон: 4437 выходных токенов, $0.0021 за 107 задач.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-12",
+    "quote": "Span-02 — $0.01 за 1M входных токенов",
+    "topic": "цена",
+    "status": "подтверждено",
+    "evidence": "Каталог: respan/span-02 — prompt 0.00000001.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-13",
+    "quote": "d1-ultra $0.042, GPT-6 Luna Decisions $0.10 за 1M входа",
+    "topic": "цена",
+    "status": "подтверждено",
+    "evidence": "Каталог: liquid/d1-ultra — 4.2e-8, openai/gpt-6-luna-decisions — 1e-7.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-14",
+    "quote": "free-тир: 20 запросов в минуту, 50 в сутки при покупках меньше $10 и 1000 в сутки при $10 и больше",
+    "topic": "лимиты",
+    "status": "подтверждено",
+    "evidence": "Документация limits.md и GET /api/v1/key: free_model_daily_requests {used, limit 1000}. Минутный лимит 20 не отражается в /key.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-15",
+    "quote": "Laya набирает 0.542 против 0.932 у Jev и 0.901 у Tev1",
+    "topic": "рейтинг",
+    "status": "непроверяемо",
+    "evidence": "Laya отсутствует в каталоге, Tev1 доступен как togethercomputer/tev1-4b-experimental, но методика Respan неизвестна. Наши 0.944 для jev получены на другом корпусе.",
+    "comparability": "none"
+  },
+  {
+    "id": "C-16",
+    "quote": "OpenDecider-small 0.794 против 0.730 у Jev",
+    "topic": "существование модели",
+    "status": "непроверяемо",
+    "evidence": "OpenDecider в каталоге OpenRouter отсутствует. Проверить утверждение нечем.",
+    "comparability": "none"
+  },
+  {
+    "id": "C-17",
+    "quote": "mercury-decide выдаёт до 14 решений в секунду",
+    "topic": "производительность",
+    "status": "непроверяемо",
+    "evidence": "Мы мерили 276–610 мс на вызов через сеть, то есть 1.6–3.6 rps. Это ограничение сети и очереди, а не потолок модели; 14 rps проверить нечем.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-18",
+    "quote": "Span-01 Lite работает бесплатно",
+    "topic": "цена",
+    "status": "подтверждено",
+    "evidence": "Каталог: respan/span-01-lite:free — 0 за вход и выход. 20 вызовов в нашем vision-прогоне стоили $0.",
+    "comparability": "exact"
+  },
+  {
+    "id": "C-19",
+    "quote": "span-01-lite принимает обычный state, как остальные decision-модели",
+    "topic": "контракт",
+    "status": "опровергнуто",
+    "evidence": "HTTP 400: 'Respan state must be a string or an object with only input and output'. Модель исключена из матрицы и вынесена в отдельный подтест.",
+    "comparability": "exact"
+  }
+]

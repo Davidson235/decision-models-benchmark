@@ -1,0 +1,32 @@
+{
+  "model": "Clef-Flash",
+  "endpoint": "http://127.0.0.1:9950/v1/systemone",
+  "n": 107,
+  "errors": 0,
+  "accuracy": 0.8037383177570093,
+  "accuracy_ci": [
+    0.7185255265844488,
+    0.8678968996526317
+  ],
+  "brier": 0.23418204695692665,
+  "ece": 0.06559317154036998,
+  "latency": {
+    "n": 107,
+    "mean": 287.97196261682245,
+    "p50": 266.0,
+    "p95": 422.0
+  },
+  "by_family": {
+    "abstention": 0.667,
+    "adversarial": 0.875,
+    "choice_fact": 0.75,
+    "choice_multiconstraint": 0.625,
+    "choice_near_miss": 0.833,
+    "choice_shortcut_trap": 0.875,
+    "multilingual": 1.0,
+    "noul_false": 1.0,
+    "noul_true": 0.875,
+    "score": 0.65
+  },
+  "wall_seconds": 30.8
+}

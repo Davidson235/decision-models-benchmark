@@ -1,0 +1,12 @@
+[
+  { "model": "vllm-d3-edge",  "ctx": 4096, "kv": false, "vram_mib": 1876, "vision": true,  "note": "самая лёгкая с mmproj" },
+  { "model": "vllm-d3-lite",  "ctx": 4096, "kv": false, "vram_mib": 2190, "vision": true,  "note": "" },
+  { "model": "Laya",          "ctx": 4096, "kv": false, "vram_mib": 1360, "vision": false, "note": "английский чекпоинт, на RU 0.514" },
+  { "model": "Julia-1",       "ctx": 4096, "kv": false, "vram_mib": 924,  "vision": false, "note": "непригодна: 0.364 при Brier 1.0" },
+  { "model": "vllm-d3-nano",  "ctx": 4096, "kv": false, "vram_mib": 3720, "vision": true,  "note": "" },
+  { "model": "vllm-d3-mini",  "ctx": 4096, "kv": false, "vram_mib": 5378, "vision": true,  "note": "лучший баланс" },
+  { "model": "Kev-4B",        "ctx": 4096, "kv": false, "vram_mib": 6026, "vision": false, "note": "VRAM по прежнему прогону" },
+  { "model": "Kev-9B",        "ctx": 2048, "kv": false, "vram_mib": 7675, "vision": false, "note": "контекст урезан ради VRAM" },
+  { "model": "Clef-Flash",    "ctx": 2048, "kv": false, "vram_mib": 7368, "vision": true,  "note": "при 4096 свепит: 300 с на запрос" },
+  { "model": "vllm-d3-flash", "ctx": 4096, "kv": true,  "vram_mib": 7931, "vision": true,  "note": "76 МиБ свободно, на грани" }
+]

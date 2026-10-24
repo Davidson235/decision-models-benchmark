@@ -1,0 +1,26 @@
+{
+  "model": "flash-c8k-kv8",
+  "endpoint": "http://127.0.0.1:9940/v1/systemone",
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.9,
+  "accuracy_ci": [
+    0.7694792561952611,
+    0.9604211124044252
+  ],
+  "brier": 0.15479551653082124,
+  "ece": 0.13116622426472538,
+  "latency": {
+    "n": 40,
+    "mean": 1395.725,
+    "p50": 297.0,
+    "p95": 12641.0
+  },
+  "by_family": {
+    "choice_fact": 1.0,
+    "choice_multiconstraint": 0.625,
+    "choice_near_miss": 0.917,
+    "choice_shortcut_trap": 1.0
+  },
+  "wall_seconds": 55.8
+}

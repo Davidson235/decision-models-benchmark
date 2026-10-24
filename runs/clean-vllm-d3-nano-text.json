@@ -1,0 +1,32 @@
+{
+  "model": "vllm-d3-nano",
+  "endpoint": "http://127.0.0.1:9950/v1/systemone",
+  "n": 107,
+  "errors": 0,
+  "accuracy": 0.7663551401869159,
+  "accuracy_ci": [
+    0.677807919851313,
+    0.836439438541204
+  ],
+  "brier": 0.2958749264785998,
+  "ece": 0.08542613906641482,
+  "latency": {
+    "n": 107,
+    "mean": 67.17757009345794,
+    "p50": 63.0,
+    "p95": 94.0
+  },
+  "by_family": {
+    "abstention": 0.778,
+    "adversarial": 1.0,
+    "choice_fact": 0.917,
+    "choice_multiconstraint": 0.5,
+    "choice_near_miss": 0.75,
+    "choice_shortcut_trap": 0.875,
+    "multilingual": 0.929,
+    "noul_false": 0.75,
+    "noul_true": 1.0,
+    "score": 0.45
+  },
+  "wall_seconds": 7.2
+}

@@ -1,0 +1,32 @@
+{
+  "model": "vllm-d3-edge",
+  "endpoint": "http://127.0.0.1:9940/v1/systemone",
+  "n": 107,
+  "errors": 0,
+  "accuracy": 0.5327102803738317,
+  "accuracy_ci": [
+    0.43868515616637266,
+    0.6244680281976206
+  ],
+  "brier": 0.5323323148169263,
+  "ece": 0.10861118641492605,
+  "latency": {
+    "n": 107,
+    "mean": 127.92523364485982,
+    "p50": 31.0,
+    "p95": 46.0
+  },
+  "by_family": {
+    "abstention": 0.778,
+    "adversarial": 0.625,
+    "choice_fact": 0.333,
+    "choice_multiconstraint": 0.25,
+    "choice_near_miss": 0.667,
+    "choice_shortcut_trap": 0.75,
+    "multilingual": 0.643,
+    "noul_false": 0.75,
+    "noul_true": 0.5,
+    "score": 0.3
+  },
+  "wall_seconds": 13.7
+}

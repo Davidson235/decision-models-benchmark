@@ -1,0 +1,14 @@
+{
+  "run": "run-20261023-230946",
+  "started_at": "2026-10-23T23:19:01+0300",
+  "models": [
+    "baseten/mammoth-1:free",
+    "baseten/elephant-1:free",
+    "inception/mercury-decide:free",
+    "typesafe/jev-1.14",
+    "perplexity/pplx-decider-flash-v1.2"
+  ],
+  "tasks": 3,
+  "repeats": 1,
+  "no_cache": false
+}

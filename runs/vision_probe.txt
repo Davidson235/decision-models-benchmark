@@ -1,0 +1,19 @@
+
+inception/mercury-decide:free  [657 ms, $0]
+   has_red: p(yes) = 1.000
+   where: bottom_left  probs={'top_left': 0.0, 'top_right': 0.0, 'bottom_left': 0.999, 'bottom_right': 0.001}
+
+typesafe/jev-1.14  [500 ms, $3.0786e-05]
+   has_red: p(yes) = 0.990
+   where: bottom_left  probs={'top_left': 0.0, 'top_right': 0.0, 'bottom_left': 1.0, 'bottom_right': 0.0}
+   box: raw = {"type": "box", "value": {"top": 0.61, "bottom": 0.97, "left": 0.1, "right": 0.33}, "probs": {}, "confidence": 0.86}
+
+perplexity/pplx-decider-flash-v1.2  [719 ms, $4.3e-06]
+   has_red: p(yes) = 0.998
+   where: bottom_left  probs={'top_left': 0.018, 'top_right': 0.004, 'bottom_left': 0.968, 'bottom_right': 0.009}
+
+cloudflare/clef-flash  [828 ms, $1.368e-05]
+   has_red: p(yes) = 0.953
+   where: bottom_left  probs={'top_left': 0.02, 'top_right': 0.015, 'bottom_left': 0.934, 'bottom_right': 0.031}
+
+baseten/mammoth-1:free  FAILED: HTTP 400: {"error":{"message":"BaseTen does not accept \"image_url\" parts in state","code":400}}

@@ -1,0 +1,26 @@
+{
+  "model": "p8-nopin",
+  "endpoint": "http://127.0.0.1:9940/v1/systemone",
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.875,
+  "accuracy_ci": [
+    0.7388757932976187,
+    0.9454058022645873
+  ],
+  "brier": 0.15713209803906497,
+  "ece": 0.14688011108886037,
+  "latency": {
+    "n": 40,
+    "mean": 205.5,
+    "p50": 188.0,
+    "p95": 282.0
+  },
+  "by_family": {
+    "choice_fact": 0.917,
+    "choice_multiconstraint": 0.875,
+    "choice_near_miss": 0.833,
+    "choice_shortcut_trap": 0.875
+  },
+  "wall_seconds": 8.2
+}

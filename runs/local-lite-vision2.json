@@ -1,0 +1,44 @@
+{
+  "model": "vllm-d3-lite",
+  "endpoint": "http://127.0.0.1:9940/v1/systemone",
+  "n": 9,
+  "errors": 10,
+  "skipped": 1,
+  "accuracy": 0.2222222222222222,
+  "accuracy_ci": [
+    0.06322376231222723,
+    0.5474166563271946
+  ],
+  "brier": 0.5445152656428403,
+  "latency": {
+    "n": 9,
+    "mean": 2017.3333333333333,
+    "p50": 484.0,
+    "p95": 13641.0
+  },
+  "by_level": {
+    "1": 0.0,
+    "2": 0.5,
+    "3": 0.5,
+    "4": 0.0
+  },
+  "per_task": {
+    "V1-01": 0,
+    "V1-02": 0,
+    "V1-03": 0,
+    "V1-04": 0,
+    "V2-06": 1,
+    "V2-07": 0,
+    "V3-09": 0,
+    "V3-11": 1,
+    "V4-15": 0
+  },
+  "error_samples": [
+    "HTTP 500: {\"error\":{\"code\":500,\"message\":\"input (5754 tokens) is too large to process. increase the physical batch size (current batch size: 4096)\",\"type\":\"server_error\"}}",
+    "HTTP 500: {\"error\":{\"code\":500,\"message\":\"input (9699 tokens) is too large to process. increase the physical batch size (current batch size: 4096)\",\"type\":\"server_error\"}}",
+    "HTTP 500: {\"error\":{\"code\":500,\"message\":\"input (8361 tokens) is too large to process. increase the physical batch size (current batch size: 4096)\",\"type\":\"server_error\"}}",
+    "HTTP 500: {\"error\":{\"code\":500,\"message\":\"input (9479 tokens) is too large to process. increase the physical batch size (current batch size: 4096)\",\"type\":\"server_error\"}}",
+    "HTTP 500: {\"error\":{\"code\":500,\"message\":\"input (16662 tokens) is too large to process. increase the physical batch size (current batch size: 4096)\",\"type\":\"server_error\"}}"
+  ],
+  "wall_seconds": 334.6
+}

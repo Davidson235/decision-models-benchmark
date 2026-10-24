@@ -1,0 +1,25 @@
+{
+  "model": "Kev-9B-cpu6",
+  "endpoint": "http://127.0.0.1:9941/v1/systemone",
+  "n": 25,
+  "errors": 0,
+  "accuracy": 0.84,
+  "accuracy_ci": [
+    0.6534598601976183,
+    0.9359665239142201
+  ],
+  "brier": 0.25573259773813356,
+  "ece": 0.18620386094083188,
+  "latency": {
+    "n": 25,
+    "mean": 1361.88,
+    "p50": 1360.0,
+    "p95": 1484.0
+  },
+  "by_family": {
+    "choice_fact": 0.833,
+    "choice_multiconstraint": 0.0,
+    "choice_near_miss": 0.917
+  },
+  "wall_seconds": 34.0
+}

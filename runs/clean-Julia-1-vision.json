@@ -1,0 +1,21 @@
+{
+  "model": "Julia-1",
+  "endpoint": "http://127.0.0.1:9950/v1/systemone",
+  "n": 0,
+  "errors": 19,
+  "skipped": 1,
+  "accuracy": null,
+  "accuracy_ci": null,
+  "brier": null,
+  "latency": null,
+  "by_level": {},
+  "per_task": {},
+  "error_samples": [
+    "HTTP 501: {\"error\":{\"code\":501,\"message\":\"This server does not support image input for decisions. For a model that supports it, start it with `--mmproj`\",\"type\":\"not_supported_error\"}}",
+    "HTTP 501: {\"error\":{\"code\":501,\"message\":\"This server does not support image input for decisions. For a model that supports it, start it with `--mmproj`\",\"type\":\"not_supported_error\"}}",
+    "HTTP 501: {\"error\":{\"code\":501,\"message\":\"This server does not support image input for decisions. For a model that supports it, start it with `--mmproj`\",\"type\":\"not_supported_error\"}}",
+    "HTTP 501: {\"error\":{\"code\":501,\"message\":\"This server does not support image input for decisions. For a model that supports it, start it with `--mmproj`\",\"type\":\"not_supported_error\"}}",
+    "HTTP 501: {\"error\":{\"code\":501,\"message\":\"This server does not support image input for decisions. For a model that supports it, start it with `--mmproj`\",\"type\":\"not_supported_error\"}}"
+  ],
+  "wall_seconds": 0.3
+}

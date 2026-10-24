@@ -1,0 +1,32 @@
+{
+  "model": "Kev-9B",
+  "endpoint": "http://127.0.0.1:9950/v1/systemone",
+  "n": 107,
+  "errors": 0,
+  "accuracy": 0.8411214953271028,
+  "accuracy_ci": [
+    0.7602234207839839,
+    0.8983740732976605
+  ],
+  "brier": 0.21899150596759767,
+  "ece": 0.16987296057506004,
+  "latency": {
+    "n": 107,
+    "mean": 157.55140186915887,
+    "p50": 140.0,
+    "p95": 297.0
+  },
+  "by_family": {
+    "abstention": 0.889,
+    "adversarial": 0.875,
+    "choice_fact": 0.833,
+    "choice_multiconstraint": 0.75,
+    "choice_near_miss": 0.917,
+    "choice_shortcut_trap": 1.0,
+    "multilingual": 1.0,
+    "noul_false": 1.0,
+    "noul_true": 1.0,
+    "score": 0.5
+  },
+  "wall_seconds": 16.9
+}

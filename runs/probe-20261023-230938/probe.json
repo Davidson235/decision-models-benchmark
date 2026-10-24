@@ -1,0 +1,137 @@
+[
+  {
+    "model": "baseten/mammoth-1:free",
+    "ok": true,
+    "latency_ms": 750.0,
+    "cost": 0,
+    "input_tokens": 274,
+    "output_tokens": 1,
+    "resolved_model": "baseten/mammoth-1-20261021",
+    "provider": "BaseTen",
+    "answers": {
+      "status": {
+        "type": "choice",
+        "value": "valid_payload",
+        "probs": {
+          "valid_payload": 0.8457533412729985,
+          "captcha": 0.007655755134176755,
+          "soft_ban": 0.02330449857237025,
+          "entity_not_found": 0.030927461123487928,
+          "partial_data": 0.07414889417832947,
+          "schema_drift": 0.01302837499801989,
+          "auth_required": 0.005181674720617303
+        },
+        "confidence": 0.8200455648184982
+      }
+    },
+    "wall_ms": 750
+  },
+  {
+    "model": "baseten/elephant-1:free",
+    "ok": true,
+    "latency_ms": 547.0,
+    "cost": 0,
+    "input_tokens": 274,
+    "output_tokens": 1,
+    "resolved_model": "baseten/elephant-1-20261021",
+    "provider": "BaseTen",
+    "answers": {
+      "status": {
+        "type": "choice",
+        "value": "valid_payload",
+        "probs": {
+          "valid_payload": 0.7053328564515202,
+          "captcha": 0.004623425220761832,
+          "soft_ban": 0.021544418507294244,
+          "entity_not_found": 0.05772688298114041,
+          "partial_data": 0.19249030513126822,
+          "schema_drift": 0.0154621483963083,
+          "auth_required": 0.0028199633117066284
+        },
+        "confidence": 0.656221665860107
+      }
+    },
+    "wall_ms": 750
+  },
+  {
+    "model": "inception/mercury-decide:free",
+    "ok": true,
+    "latency_ms": 641.0,
+    "cost": 0,
+    "input_tokens": 288,
+    "output_tokens": 1,
+    "resolved_model": "inception/mercury-decide-20260930",
+    "provider": "Inception",
+    "answers": {
+      "status": {
+        "type": "choice",
+        "value": "valid_payload",
+        "probs": {
+          "valid_payload": 0.9984860517673789,
+          "captcha": 4.258470481213588e-05,
+          "soft_ban": 0.00010874385328299178,
+          "entity_not_found": 0.0001684257747549225,
+          "partial_data": 0.001031733445745482,
+          "schema_drift": 0.00014863522453662987,
+          "auth_required": 1.3825229488986903e-05
+        },
+        "confidence": 0.9982337270619419
+      }
+    },
+    "wall_ms": 844
+  },
+  {
+    "model": "typesafe/jev-1.14",
+    "ok": true,
+    "latency_ms": 562.0,
+    "cost": 2.8686e-05,
+    "input_tokens": 683,
+    "output_tokens": 76,
+    "resolved_model": "typesafe/jev-1.14-20261014",
+    "provider": "TypeSafe",
+    "answers": {
+      "status": {
+        "type": "choice",
+        "value": "valid_payload",
+        "probs": {
+          "valid_payload": 0.98,
+          "captcha": 0.0,
+          "soft_ban": 0.0,
+          "entity_not_found": 0.0,
+          "partial_data": 0.01,
+          "schema_drift": 0.01,
+          "auth_required": 0.0
+        },
+        "confidence": 0.98
+      }
+    },
+    "wall_ms": 765
+  },
+  {
+    "model": "perplexity/pplx-decider-flash-v1.2",
+    "ok": true,
+    "latency_ms": 500.0,
+    "cost": 2.59e-06,
+    "input_tokens": 259,
+    "output_tokens": 1,
+    "resolved_model": "perplexity/pplx-decider-flash-v1.2-20261016",
+    "provider": "Perplexity",
+    "answers": {
+      "status": {
+        "type": "choice",
+        "value": "valid_payload",
+        "probs": {
+          "valid_payload": 0.952070457034617,
+          "captcha": 0.002338625584860757,
+          "soft_ban": 0.004177848900569791,
+          "entity_not_found": 0.005638316053539884,
+          "partial_data": 0.016479334401628697,
+          "schema_drift": 0.017896782437942422,
+          "auth_required": 0.0013986355868414863
+        },
+        "confidence": 0.9440821998737199
+      }
+    },
+    "wall_ms": 704
+  }
+]

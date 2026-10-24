@@ -1,0 +1,10 @@
+{
+  "run": "resume-i_e727vk",
+  "started_at": "2026-10-23T23:20:32+0300",
+  "models": [
+    "baseten/elephant-1:free"
+  ],
+  "tasks": 4,
+  "repeats": 1,
+  "no_cache": false
+}

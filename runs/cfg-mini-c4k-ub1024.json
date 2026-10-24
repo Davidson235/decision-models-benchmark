@@ -1,0 +1,27 @@
+{
+  "model": "mini-c4k-ub1024",
+  "endpoint": "http://127.0.0.1:9940/v1/systemone",
+  "n": 60,
+  "errors": 0,
+  "accuracy": 0.8,
+  "accuracy_ci": [
+    0.6821795390818299,
+    0.8817161026314104
+  ],
+  "brier": 0.2622212003896338,
+  "ece": 0.17590086540271813,
+  "latency": {
+    "n": 60,
+    "mean": 652.3333333333334,
+    "p50": 203.0,
+    "p95": 265.0
+  },
+  "by_family": {
+    "choice_fact": 0.917,
+    "choice_multiconstraint": 0.875,
+    "choice_near_miss": 0.833,
+    "choice_shortcut_trap": 0.875,
+    "score": 0.65
+  },
+  "wall_seconds": 39.1
+}

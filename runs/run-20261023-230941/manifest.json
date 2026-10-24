@@ -1,0 +1,10 @@
+{
+  "run": "run-20261023-230941",
+  "started_at": "2026-10-23T23:09:41+0300",
+  "models": [
+    "baseten/elephant-1:free"
+  ],
+  "tasks": 3,
+  "repeats": 1,
+  "no_cache": true
+}

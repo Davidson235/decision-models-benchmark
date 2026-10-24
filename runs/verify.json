@@ -1,0 +1,32 @@
+[
+ {
+  "name": "1. metrics + normalizer unit tests",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "2. contract replay (3 shapes + malformed)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "3. live smoke (3 tasks, real key)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "4a. determinism (5 tasks x 2)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "4b. resume without duplicates",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "5. full-run audit + deterministic summary",
+  "ok": true,
+  "detail": ""
+ }
+]

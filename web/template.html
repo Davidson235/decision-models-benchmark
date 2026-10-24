@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision Models Benchmark — Evaluation Report</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <h1>Decision Models Benchmark — Unified Evaluation</h1>
+      <div class="sub" id="overview-sub">107 Text &amp; 20 Vision Tasks · Cloud API vs. Local llama.cpp (8 GB VRAM Budget)</div>
+    </div>
+    <div class="sub mono" id="f-summary"></div>
+  </header>
+
+  <nav class="tabs">
+    <button data-view="overview" class="active">Overview</button>
+    <button data-view="text">Text Benchmark</button>
+    <button data-view="vision">Vision Benchmark</button>
+    <button data-view="explore">Task Explorer</button>
+    <button data-view="local">Hardware &amp; Local (8GB)</button>
+    <button data-view="methods">Methodology</button>
+  </nav>
+
+  <div class="filters">
+    <div class="frow"><span class="flabel">Test</span><div id="f-test" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      <span class="flabel" style="margin-left:18px">Result</span><div id="f-out" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      <input type="search" id="f-q" placeholder="Search by task ID, model, or category...">
+      <button class="chip" id="f-reset">Reset</button>
+    </div>
+    <div class="frow"><span class="flabel">Models</span><div id="f-models" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
+    <div class="frow"><span class="flabel">Categories</span><div id="f-cats" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
+  </div>
+
+  <!-- ------------------------------------------------------------- overview -->
+  <section class="view active" id="v-overview">
+    <!-- Hardware Specification Callout -->
+    <div class="card" style="margin-bottom: 20px; border-left: 3px solid var(--accent)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>
+          <h3 style="margin:0 0 4px">🖥️ Hardware Testbed &amp; Environment Specification</h3>
+          <div class="sub">GPU: <b>NVIDIA GeForce RTX 2060 SUPER (8,192 MiB GDDR6, CUDA 12.4)</b> · CPU: <b>Intel Core i5-14600KF (14c/20t)</b> · RAM: <b>48 GB</b> · OS: <b>Windows 11 x64</b></div>
+        </div>
+        <span class="chip" style="border-color:var(--accent);color:var(--accent);font-weight:600">Strict ≤ 8 GB VRAM Ceiling</span>
+      </div>
+      <p class="note" style="margin-top:8px">All local decision models were evaluated on consumer-grade hardware under an explicit <b>8 GB VRAM budget</b> using <code>llama.cpp</code> (CUDA 12, <code>-ngl 99</code> full GPU layer offloading). Models were selected and quantized (Q4_K_M / Q8_0) specifically to test realistic desktop deployment viability without requiring enterprise cloud GPUs.</p>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+    <div class="two-col">
+      <div class="card">
+        <h2>Accuracy by Model</h2>
+        <p class="note">Proportion of correct responses across the active selection. Top performers first.</p>
+        <div id="chart-acc"></div>
+      </div>
+      <div class="card">
+        <h2>Text vs. Vision Accuracy</h2>
+        <p class="note">Different corpora and questions — two independent performance axes, not a blended score.</p>
+        <div id="chart-test"></div>
+        <h3>Latency vs. Accuracy</h3>
+        <div id="scatter"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Summary Matrix</h2>
+      <div id="table-models"></div>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------------- text -->
+  <section class="view" id="v-text">
+    <div class="card">
+      <h2>Text Model Summary: Cloud &amp; Local</h2>
+      <p class="note">Direct comparison of 5 cloud and 10 local models on an identical 107-task corpus. Local models are marked as (local) and benchmarked on RTX 2060 SUPER 8GB.</p>
+      <div id="text-models-table"></div>
+    </div>
+    <div class="card">
+      <h2>Category Reference</h2>
+      <p class="note">Each category isolates a specific decision primitive or failure mode rather than a broad subject topic.</p>
+      <div id="catkey"></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px">
+        <h2 style="margin:0">Accuracy by Category (Heatmap)</h2>
+        <div id="heat-filter" style="display:flex;gap:6px"></div>
+      </div>
+      <p class="note">Cell numbers indicate percentage accuracy; background saturation indicates relative score. Cloud and local models aligned side-by-side.</p>
+      <div id="heat"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h2>Probability Calibration</h2>
+        <div id="calib"></div>
+      </div>
+      <div class="card">
+        <h2>Score Axis: Deviation from Rubric</h2>
+        <div id="bias"></div>
+        <p class="note">Models consistently demonstrate a 0.1–0.3 level bias toward the center of the ordinal 0–4 scale.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Paired Model Comparisons (Bootstrap)</h2>
+      <div id="cmp"></div>
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------------- vision -->
+  <section class="view" id="v-vision">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:8px">
+        <h2 style="margin:0">Vision Models Summary</h2>
+        <div id="vmodels-filter" style="display:flex;gap:6px"></div>
+      </div>
+      <p class="note">6 cloud and 6 local models evaluated on 20 ladder tasks. Local models are labeled (local). "+1 skip" denotes the box-coordinates task (supported only by Jev).</p>
+      <div id="vmodels"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h2>Accuracy across Ladder Levels</h2>
+        <p class="note">L1 (single salient object) through L5 (dense scene reasoning, code bug, arithmetic). Direct cloud vs. local comparison.</p>
+        <div id="vlvl"></div>
+      </div>
+      <div class="card">
+        <h2>Box Coordinate Primitive</h2>
+        <div id="box"></div>
+        <p class="note">Intersection over Union (IoU) evaluated against exact synthetic ground truth coordinates.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Visual Task Inspection Cards</h2>
+      <p class="note">Under each image: prompt question, ground truth answer, and individual model predictions: ✓/✗, confidence, and error output.</p>
+      <div class="vtasks" id="vtasks"></div>
+    </div>
+    <div class="card">
+      <h2>Empirical Task Difficulty</h2>
+      <div id="vdiff"></div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------- explore -->
+  <section class="view" id="v-explore">
+    <div class="card">
+      <h2>All Observations</h2>
+      <p class="note" id="explore-count"></p>
+      <div id="explore-table"></div>
+    </div>
+  </section>
+
+  <!-- ---------------------------------------------------------------- local -->
+  <section class="view" id="v-local">
+    <div class="card">
+      <h2>Local Deployment: 10 Models on RTX 2060 SUPER (8 GB VRAM Limit)</h2>
+      <p class="note">Evaluated on identical corpora (107 text + 20 vision tasks) using <code>llama.cpp</code> (CUDA 12 build, offloading all layers with <code>-ngl 99</code>). GPU warmed up prior to measurements, cold runs excluded. Accuracy is deterministic; wall-clock latency measured under dedicated GPU load.</p>
+      <div id="local-table"></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h2>Local Text Accuracy &amp; VRAM</h2>
+        <div id="local-chart"></div>
+      </div>
+      <div class="card">
+        <h2>Local Vision Accuracy &amp; VRAM</h2>
+        <div id="local-vchart"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Cloud Baselines on the Same Corpora</h2>
+      <div id="local-cloud"></div>
+      <p class="note">Text ceiling: 0.972 (mammoth-1) vs. best local 0.869 (vllm-d3-flash, −10.3 pp). Vision ceiling: 0.947 (span-02 / pplx-decider) vs. best local 0.895 (vllm-d3-flash / Clef-Flash, −5.2 pp). Local models incur zero token costs, complete data privacy, and predictable low-latency inference.</p>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------- methods -->
+  <section class="view" id="v-methods">
+    <div class="card">
+      <h2>Evaluation Metrics</h2>
+      <ul class="tight">
+        <li><b>Accuracy</b> — proportion of tasks where the argmax selected option matched the ground truth label. For binary predicates (noul), threshold is 0.5; for ordinal scores, rounded to the nearest level.</li>
+        <li><b>Brier Score</b> — mean squared error across the full probability distribution vector.</li>
+        <li><b>Expected Calibration Error (ECE)</b> — 10-bin weighted absolute gap between model confidence and empirical accuracy.</li>
+        <li><b>p(gold)</b> — probability mass allocated to the true gold option (directly informs Brier and NLL).</li>
+        <li><b>Latency (p50)</b> — end-to-end wall-clock latency in milliseconds. Cloud metrics include OpenRouter transport and provider queueing; local metrics measure dedicated GPU inference.</li>
+        <li><b>Cost</b> — cumulative cost based on reported token usage.</li>
+      </ul>
+      <h3>Limitations &amp; Boundary Conditions</h3>
+      <ul class="tight">
+        <li>Text Corpus: 107 tasks. A difference under ~10 percentage points is not statistically resolvable at n=107 (paired bootstrap CIs are reported).</li>
+        <li>Vision Corpus: 20 ladder tasks (4 per level). Each task represents 25% of its level score.</li>
+        <li>Local Hardware Limit: Tested strictly within an 8 GB VRAM budget on consumer hardware.</li>
+        <li>Ground truth labels are analytically authored with written rationales, not crowdsourced.</li>
+        <li>Third-party leaderboard scores (Jev Decision Index, S1MB) measure different splits and cannot be directly equated with argmax task accuracy.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Self-Verification Suite</h2>
+      <div id="verify"></div>
+    </div>
+    <div class="card">
+      <h2>OpenRouter Decision Models Catalog</h2>
+      <div id="catalog"></div>
+    </div>
+    <div class="card">
+      <h2>Data Provenance &amp; Hashes</h2>
+      <div id="meta"></div>
+    </div>
+  </section>
+
+  <footer>
+    Single self-contained offline HTML: zero external dependencies, fonts, or network requests. Data embedded directly in payload. Filter state preserved in URL hash for sharing.
+  </footer>
+</div>
+
+<script id="payload" type="application/json">__PAYLOAD__</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "model": "clk",
+  "endpoint": "http://127.0.0.1:9940/v1/systemone",
+  "n": 50,
+  "errors": 0,
+  "accuracy": 0.82,
+  "accuracy_ci": [
+    0.6920368054529739,
+    0.902299172675462
+  ],
+  "brier": 0.23006302739840825,
+  "ece": 0.14700670516975486,
+  "latency": {
+    "n": 50,
+    "mean": 561.88,
+    "p50": 188.0,
+    "p95": 281.0
+  },
+  "by_family": {
+    "choice_fact": 0.917,
+    "choice_multiconstraint": 0.875,
+    "choice_near_miss": 0.833,
+    "choice_shortcut_trap": 0.875,
+    "score": 0.6
+  },
+  "wall_seconds": 28.1
+}

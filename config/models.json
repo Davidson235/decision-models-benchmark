@@ -1,0 +1,46 @@
+{
+  "endpoint": "https://openrouter.ai/api/v1/systemone",
+  "models": [
+    {
+      "slug": "baseten/mammoth-1:free",
+      "label": "mammoth-1 (27B, free)",
+      "tier": "free",
+      "family": "qwen3.5-27b",
+      "notes": "Largest free decision model. Text only."
+    },
+    {
+      "slug": "baseten/elephant-1:free",
+      "label": "elephant-1 (9B, free)",
+      "tier": "free",
+      "family": "qwen3.5-9b",
+      "notes": "Small sibling of mammoth-1. Text only."
+    },
+    {
+      "slug": "inception/mercury-decide:free",
+      "label": "mercury-decide (free)",
+      "tier": "free",
+      "family": "inception",
+      "notes": "Advertises up to 14 decisions/sec."
+    },
+    {
+      "slug": "typesafe/jev-1.14",
+      "label": "jev-1.14 (paid, reference)",
+      "tier": "paid",
+      "family": "typesafe",
+      "notes": "0.042 $/1M input. Reference point for paid quality."
+    },
+    {
+      "slug": "perplexity/pplx-decider-flash-v1.2",
+      "label": "pplx-decider-flash-v1.2 (paid)",
+      "tier": "paid",
+      "family": "perplexity",
+      "notes": "0.01 $/1M input, 262K context."
+    }
+  ],
+  "span_only": {
+    "slug": "respan/span-01-lite:free",
+    "label": "span-01-lite (free, span-scoring)",
+    "tier": "free",
+    "notes": "Accepts only plain-string state or {input, output} message span. Excluded from the main matrix, scored on a separate string-state subset."
+  }
+}
