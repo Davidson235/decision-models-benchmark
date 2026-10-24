@@ -152,7 +152,7 @@ Decision-models-TEST/
 ### Запуск
 ```powershell
 # 1. Клонирование репозитория
-git clone https://github.com/your-username/decision-models-benchmark.git
+git clone https://github.com/Davidson235/decision-models-benchmark.git
 cd decision-models-benchmark
 
 # 2. Настройка окружения

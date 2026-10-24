@@ -152,7 +152,7 @@ Decision-models-TEST/
 ### Setup
 ```powershell
 # 1. Clone repository
-git clone https://github.com/your-username/decision-models-benchmark.git
+git clone https://github.com/Davidson235/decision-models-benchmark.git
 cd decision-models-benchmark
 
 # 2. Configure environment
