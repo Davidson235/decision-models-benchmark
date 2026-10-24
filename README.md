@@ -32,6 +32,13 @@ All local models were evaluated directly on consumer-grade hardware under an exp
 
 Evaluated across 10 semantic and structural categories (factual choice, near-miss distractors, multi-constraint satisfaction, shortcut traps, adversarial injections, binary predicates, ordinal scoring rubrics, and multilingual Russian/English pairs).
 
+<p align="center">
+  <img src="assets/benchmark_text_accuracy.png" alt="Decision Models Benchmark — Text Accuracy (Cloud vs. Local RTX 2060 SUPER 8GB)" width="100%">
+</p>
+
+<details>
+<summary><b>📊 Click to expand detailed Text Benchmark table</b></summary>
+
 | Model | Environment | Tasks | Accuracy | 95% CI | Brier | ECE | Latency (p50) | Resource / Cost |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **baseten/mammoth-1:free** | Cloud | 107 | **97.2%** | [93.5% … 99.1%] | 0.053 | 0.038 | 884 ms | $0.0000 |
@@ -50,11 +57,20 @@ Evaluated across 10 semantic and structural categories (factual choice, near-mis
 | **Laya (local)** | Local (8GB) | 107 | **51.4%** | [42.1% … 60.7%] | 0.644 | 0.442 | **32 ms** | 1,360 MiB VRAM |
 | **Julia-1 (local)** | Local (8GB) | 107 | **36.4%** | [27.1% … 45.8%] | 1.005 | 0.636 | **31 ms** | 924 MiB VRAM |
 
+</details>
+
 ---
 
 ### 2. Vision Ladder Benchmark (20 Tasks)
 
 Evaluated across a 5-tier complexity ladder (L1: Salient Objects → L2: In-Image Text & Symbols → L3: Document Logic & Receipt Math → L4: Tables & Grids → L5: Dense Code & Difficult OCR).
+
+<p align="center">
+  <img src="assets/benchmark_vision_ladder.png" alt="Decision Models Benchmark — Vision & Multimodal Ladder Evaluation" width="100%">
+</p>
+
+<details>
+<summary><b>📊 Click to expand detailed Vision Benchmark tables</b></summary>
 
 | Model | Environment | Evaluated | Accuracy | Brier | Latency (p50) | Resource / Cost |
 |---|---|:---:|:---:|:---:|:---:|:---:|
@@ -82,6 +98,18 @@ Evaluated across a 5-tier complexity ladder (L1: Salient Objects → L2: In-Imag
 | **L3** | Document layout, receipt arithmetic, aggregation, ratios | 87.5% | 79.2% | −8.3 pp |
 | **L4** | Structured tables, grid reasoning, spatial coordinates | 83.3% | 75.0% | −8.3 pp |
 | **L5** | Dense code debugging, OCR under challenging conditions | 79.2% | 66.7% | −12.5 pp |
+
+</details>
+
+---
+
+### 3. Pareto Efficiency: Latency vs. Accuracy
+
+Trade-off between response speed and classification accuracy. The sweet spot (upper left) combines >80% accuracy with sub-60ms dedicated local GPU latency.
+
+<p align="center">
+  <img src="assets/benchmark_pareto_latency.png" alt="Pareto Efficiency: Latency vs. Accuracy" width="100%">
+</p>
 
 ---
 
